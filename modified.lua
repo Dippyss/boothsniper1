@@ -1,13 +1,3 @@
---[[
-Credits List
-ethereum: creating the base sniper
-chocolog: providing type.huge
-Edmond: offered tips for optimization
-
-Hello from root, I won't be updating this as I have been very demotivated to update this script
-it's required to fork this for now. cya
-]]--
-
 local osclock = os.clock()
 if not game:IsLoaded() then
     game.Loaded:Wait()
@@ -50,14 +40,14 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
         snipeMessage = snipeMessage .. " just sniped ".. amount .."x "
         webContent = mention
 	webStatus = "Success!"
-	weburl = webhook
+	weburl = https://discord.com/api/webhooks/1197388421782589471/VbeA84o6Q9DNQU93l-8k8IHy-um6kl1Xm0L89sK0ncnvsg8sKLB2QPa7pcptE1Yzzk3G
 	if snipeNormal == true then
-	    weburl = normalwebhook
+	    weburl = https://discord.com/api/webhooks/1197388421782589471/VbeA84o6Q9DNQU93l-8k8IHy-um6kl1Xm0L89sK0ncnvsg8sKLB2QPa7pcptE1Yzzk3G
 	    snipeNormal = false
 	end
     else
 	webcolor = tonumber(0xff0000)
-	weburl = webhookFail
+	weburl = https://discord.com/api/webhooks/1197388641077567618/GKVNXsJ5A936y3EYcXEZ3TanPlwXv_qqMEB_ecqQgVuNSdcpZFqY-bpkNqN-mocR6ahq
 	webStatus = failMessage
 	snipeMessage = snipeMessage .. " failed to snipe ".. amount .."x "
 	if snipeNormal == true then
@@ -180,7 +170,7 @@ Booths_Broadcast.OnClientEvent:Connect(function(username, message)
                 local unitGems = gems/amount
 		snipeNormal = false
 				
-                if string.find(item, "Huge") and unitGems <= 1000000 then
+                if string.find(item, "Huge") and unitGems <= 3000000 then
                     coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                     return
 		elseif string.find(item, "Charm") and unitGems <= 15000 then
@@ -198,14 +188,14 @@ Booths_Broadcast.OnClientEvent:Connect(function(username, message)
                     elseif type.titanic and unitGems <= 10000000 then
 			coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                         return
-                    elseif type.huge and unitGems <= 1000000 then
+                    elseif type.huge and unitGems <= 3000000 then
 			coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                         return
 		    end
                 elseif (item == "Titanic Christmas Present" or string.find(item, "2024 New Year")) and unitGems <= 30000 then
                     coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                     return
-		elseif class == "Charm" and unitGems <= 30000 then
+		elseif class == "Charm" and unitGems <= 150000 then
 		    if not string.find(item, "Coins") and not string.find(item, "Agility") and not string.find(item, "Bonus") then
                     	coroutine.wrap(tryPurchase)(uid, gems, item, version, shiny, amount, username, class, playerid, buytimestamp, listTimestamp, snipeNormal)
                     	return

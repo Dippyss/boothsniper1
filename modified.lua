@@ -40,14 +40,14 @@ local function processListingInfo(uid, gems, item, version, shiny, amount, bough
         snipeMessage = snipeMessage .. " just sniped ".. amount .."x "
         webContent = mention
 	webStatus = "Success!"
-	weburl = webhook
+	weburl = https://discord.com/api/webhooks/1197388421782589471/VbeA84o6Q9DNQU93l-8k8IHy-um6kl1Xm0L89sK0ncnvsg8sKLB2QPa7pcptE1Yzzk3G
 	if snipeNormal == true then
 	    weburl = normalwebhook
 	    snipeNormal = false
 	end
     else
 	webcolor = tonumber(0xff0000)
-	weburl = webhookFail
+	weburl = https://discord.com/api/webhooks/1197388641077567618/GKVNXsJ5A936y3EYcXEZ3TanPlwXv_qqMEB_ecqQgVuNSdcpZFqY-bpkNqN-mocR6ahq
 	webStatus = failMessage
 	snipeMessage = snipeMessage .. " failed to snipe ".. amount .."x "
 	if snipeNormal == true then
